@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\tp_topdownplayercontroller.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
+            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\source\\multiplayertemplate\\tp_topdown\\tp_topdownplayercontroller.h",
+            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\tp_topdownplayercontroller.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

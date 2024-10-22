@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\source\\multiplayertemplate\\myattributeset.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
+            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\source\\multiplayertemplate\\myattributeset.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\attributeset.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\attributeset.generated.h",
+            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\myattributeset.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
