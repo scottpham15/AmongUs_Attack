@@ -4,18 +4,21 @@
 #include "MyCharacter.h"
 
 #include "AbilitySystemComponent.h"
+#include "InputMappingQuery.h"
 #include "MyAttributeSet.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	bReplicates = true;
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 	
 	// Don't rotate character to camera direction
@@ -91,8 +94,32 @@ void AMyCharacter::SetupACS()
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BasicAttributeSet->GetHealthAttribute()).AddUObject(this, &AMyCharacter::OnHealthChange);
 }
 
+void AMyCharacter::OnRep_IsDead()
+{
+	if (!IsValid(GetController()))
+		SetActorHiddenInGame(true);
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
+	GetWorld()->SpawnActor<AActor>(DeadBody ,GetActorTransform());
+}
+
+void AMyCharacter::ServerOnDead_Implementation(FVector Loc)
+{
+	DeadLoc = Loc;
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
+}
+
 void AMyCharacter::OnHealthChange(const FOnAttributeChangeData& Data)
 {
 	UKismetSystemLibrary::PrintString(this, GetActorLocation().ToString());
+	FVector LocSend = GetActorLocation();
+	LocSend.Z = 550.f;
+	ServerOnDead(LocSend);
+	GetMesh()->SetMaterial(0, DeadMat);
+}
+
+void AMyCharacter::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AMyCharacter, DeadLoc);
 }
 

@@ -11,6 +11,8 @@
 class UMyAttributeSet;
 class UAbilitySystemComponent;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroyComponent);
+
 UCLASS(Blueprintable, config=Game)
 class MULTIPLAYERTEMPLATE_API AMyCharacter : public ACharacter, public IAbilitySystemInterface
 {
@@ -56,9 +58,26 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void SetupACS();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	TSubclassOf<AActor> DeadBody;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UMaterial* DeadMat;
+
+	UFUNCTION()
+	void OnRep_IsDead();
+
+	UFUNCTION(Server, Unreliable)
+	void ServerOnDead(FVector Loc);
 	
+	UPROPERTY(ReplicatedUsing = OnRep_IsDead)
+	FVector DeadLoc;
+	
+	UPROPERTY(BlueprintAssignable)
+	FDestroyComponent OnIsKilled;
 protected:
 
 	void OnHealthChange(const FOnAttributeChangeData& Data);
-
+	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
 };
