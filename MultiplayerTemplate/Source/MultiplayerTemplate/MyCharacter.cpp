@@ -105,6 +105,7 @@ void AMyCharacter::OnRep_IsDead()
 void AMyCharacter::ServerOnDead_Implementation(FVector Loc)
 {
 	DeadLoc = Loc;
+	UKismetSystemLibrary::PrintString(this, DeadLoc.ToString());
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 }
 

@@ -155,14 +155,14 @@ UMyAttributeSet::~UMyAttributeSet() {}
 // End Class UMyAttributeSet
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_PearBecomeHuman_Documents_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_Statics
+struct Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UMyAttributeSet, UMyAttributeSet::StaticClass, TEXT("UMyAttributeSet"), &Z_Registration_Info_UClass_UMyAttributeSet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyAttributeSet), 1329244904U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PearBecomeHuman_Documents_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_455053099(TEXT("/Script/MultiplayerTemplate"),
-	Z_CompiledInDeferFile_FID_Users_PearBecomeHuman_Documents_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PearBecomeHuman_Documents_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_455053099(TEXT("/Script/MultiplayerTemplate"),
+	Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyAttributeSet_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

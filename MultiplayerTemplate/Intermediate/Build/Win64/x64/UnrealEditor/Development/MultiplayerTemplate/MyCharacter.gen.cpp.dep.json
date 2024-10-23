@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.gen.cpp",
+        "Source": "d:\\github\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\github\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
-            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\source\\multiplayertemplate\\mycharacter.h",
+            "d:\\github\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
+            "d:\\github\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\mycharacter.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
@@ -69,7 +69,7 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemcomponent.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilitysysteminterface.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysysteminterface.generated.h",
-            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.generated.h"
+            "d:\\github\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

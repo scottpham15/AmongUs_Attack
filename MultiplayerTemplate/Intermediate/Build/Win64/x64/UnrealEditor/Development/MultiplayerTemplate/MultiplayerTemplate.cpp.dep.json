@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\source\\multiplayertemplate\\multiplayertemplate.cpp",
+        "Source": "d:\\github\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\multiplayertemplate.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\github\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
-            "c:\\users\\pearbecomehuman\\documents\\multiplayertemplate\\source\\multiplayertemplate\\multiplayertemplate.h"
+            "d:\\github\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
+            "d:\\github\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\multiplayertemplate.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

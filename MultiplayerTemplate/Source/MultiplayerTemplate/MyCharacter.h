@@ -71,7 +71,7 @@ public:
 	UFUNCTION(Server, Unreliable)
 	void ServerOnDead(FVector Loc);
 	
-	UPROPERTY(ReplicatedUsing = OnRep_IsDead)
+	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_IsDead)
 	FVector DeadLoc;
 	
 	UPROPERTY(BlueprintAssignable)

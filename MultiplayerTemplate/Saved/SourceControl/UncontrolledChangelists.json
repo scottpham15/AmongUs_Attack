@@ -4,7 +4,12 @@
 		{
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
-			"files": []
+			"files": [
+				"D:/GitHub/AmongUs_Attack/MultiplayerTemplate/Content/Multiplayer/Blueprint_Wizard/GA_KillCrewMate.uasset",
+				"D:/GitHub/AmongUs_Attack/MultiplayerTemplate/Content/Multiplayer/Blueprint_Wizard/BP_WizardCharacter.uasset",
+				"D:/GitHub/AmongUs_Attack/MultiplayerTemplate/Content/Multiplayer/Blueprint_Wizard/BP_DeadBody.uasset",
+				"D:/GitHub/AmongUs_Attack/MultiplayerTemplate/Content/Multiplayer/Level/Maps/Map1/Map1.umap"
+			]
 		}
 	]
 }
