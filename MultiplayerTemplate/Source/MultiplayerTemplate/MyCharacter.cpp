@@ -19,6 +19,7 @@ AMyCharacter::AMyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	bReplicates = true;
+	IsGhost = false;
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 	
 	// Don't rotate character to camera direction
@@ -94,24 +95,33 @@ void AMyCharacter::SetupACS()
 	AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BasicAttributeSet->GetHealthAttribute()).AddUObject(this, &AMyCharacter::OnHealthChange);
 }
 
+void AMyCharacter::DeadBodyReported(ADeadBody* DeadBodyDes)
+{
+	UKismetSystemLibrary::PrintString(this, "co 1 xac chet");
+	FoundDeadBody.Broadcast(DeadBodyDes);
+}
+
 void AMyCharacter::OnRep_IsDead()
 {
 	if (!IsValid(GetController()))
 		SetActorHiddenInGame(true);
+	
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
-	GetWorld()->SpawnActor<AActor>(DeadBody ,GetActorTransform());
+	FTransform Temp = GetActorTransform();
+	Temp.SetLocation(DeadLoc);
+	GetWorld()->SpawnActor<AActor>(DeadBody, Temp);
 }
 
-void AMyCharacter::ServerOnDead_Implementation(FVector Loc)
+void AMyCharacter::ServerOnDead_Implementation(const FVector Loc)
 {
 	DeadLoc = Loc;
+	IsGhost = true;
 	UKismetSystemLibrary::PrintString(this, DeadLoc.ToString());
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 }
 
 void AMyCharacter::OnHealthChange(const FOnAttributeChangeData& Data)
 {
-	UKismetSystemLibrary::PrintString(this, GetActorLocation().ToString());
 	FVector LocSend = GetActorLocation();
 	LocSend.Z = 550.f;
 	ServerOnDead(LocSend);

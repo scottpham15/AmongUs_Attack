@@ -6,12 +6,13 @@
 #include "GameFramework/Character.h"
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemInterface.h"
+#include "DeadBody.h"
 #include "MyCharacter.generated.h"
 
 class UMyAttributeSet;
 class UAbilitySystemComponent;
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FDestroyComponent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDestroyComponent, ADeadBody*, DeadBodyDes);
 
 UCLASS(Blueprintable, config=Game)
 class MULTIPLAYERTEMPLATE_API AMyCharacter : public ACharacter, public IAbilitySystemInterface
@@ -51,6 +52,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowPrivateAccess = "true"))
 	UMyAttributeSet* BasicAttributeSet;
+
+	UPROPERTY(BlueprintReadOnly, Replicated)
+	bool IsGhost;
+	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -58,6 +63,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void SetupACS();
+
+	void DeadBodyReported(ADeadBody* DeadBodyDes);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	TSubclassOf<AActor> DeadBody;
@@ -75,7 +82,7 @@ public:
 	FVector DeadLoc;
 	
 	UPROPERTY(BlueprintAssignable)
-	FDestroyComponent OnIsKilled;
+	FDestroyComponent FoundDeadBody;
 protected:
 
 	void OnHealthChange(const FOnAttributeChangeData& Data);

@@ -9,23 +9,24 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ADeadBody;
 #ifdef MULTIPLAYERTEMPLATE_MyCharacter_generated_h
 #error "MyCharacter.generated.h already included, missing '#pragma once' in MyCharacter.h"
 #endif
 #define MULTIPLAYERTEMPLATE_MyCharacter_generated_h
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_14_DELEGATE \
-MULTIPLAYERTEMPLATE_API void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyComponent);
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_15_DELEGATE \
+MULTIPLAYERTEMPLATE_API void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyComponent, ADeadBody* DeadBodyDes);
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void ServerOnDead_Implementation(FVector Loc); \
 	DECLARE_FUNCTION(execServerOnDead); \
 	DECLARE_FUNCTION(execOnRep_IsDead);
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_CALLBACK_WRAPPERS
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_INCLASS_NO_PURE_DECLS \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_CALLBACK_WRAPPERS
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyCharacter(); \
 	friend struct Z_Construct_UClass_AMyCharacter_Statics; \
@@ -36,12 +37,13 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		DeadLoc=NETFIELD_REP_START, \
+		IsGhost=NETFIELD_REP_START, \
+		DeadLoc, \
 		NETFIELD_REP_END=DeadLoc	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_ENHANCED_CONSTRUCTORS \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyCharacter(AMyCharacter&&); \
@@ -53,14 +55,14 @@ public: \
 	NO_API virtual ~AMyCharacter();
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_16_PROLOG
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_GENERATED_BODY \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_17_PROLOG
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_CALLBACK_WRAPPERS \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_INCLASS_NO_PURE_DECLS \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_19_ENHANCED_CONSTRUCTORS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_CALLBACK_WRAPPERS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_INCLASS_NO_PURE_DECLS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

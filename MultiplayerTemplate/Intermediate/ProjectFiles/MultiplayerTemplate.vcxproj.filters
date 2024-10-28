@@ -45,6 +45,12 @@
     <Filter Include="Source\MultiplayerTemplate">
       <UniqueIdentifier>{E87097D8-24C9-36C5-A53C-A5B57B23B58C}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\MultiplayerTemplate\DeadBody.cpp">
+      <Filter>Source\MultiplayerTemplate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MultiplayerTemplate\DeadBody.h">
+      <Filter>Source\MultiplayerTemplate</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\MultiplayerTemplate\MinimapSubsystem.cpp">
       <Filter>Source\MultiplayerTemplate</Filter>
     </ClCompile>

@@ -10,7 +10,7 @@
 
 class UEnhancedInputLocalPlayerSubsystem;
 
-AMyPlayerController::AMyPlayerController(): DefaultMappingContext(nullptr), MoveAction(nullptr), bMoveToMouseCursor(1)
+AMyPlayerController::AMyPlayerController(): DefaultMappingContext(nullptr), MoveAction(nullptr)
 {
 	bShowMouseCursor = true;
 }
@@ -57,4 +57,9 @@ void AMyPlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Started, this, &AMyPlayerController::OnMove);
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMyPlayerController::OnMove);
 	}
+}
+
+void AMyPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
 }

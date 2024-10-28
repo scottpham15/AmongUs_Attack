@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
+"D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\DeadBody.gen.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MinimapSubsystem.gen.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MultiplayerTemplate.init.gen.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MyAttributeSet.gen.cpp.obj"
@@ -15,6 +16,7 @@
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MinimapSubsystem.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MultiplayerTemplate.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MyAttributeSet.cpp.obj"
+"D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\DeadBody.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MyCharacter.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MyPlayerController.cpp.obj"
 "D:\GitHub\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\Default.rc2.res"

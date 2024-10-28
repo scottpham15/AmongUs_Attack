@@ -29,6 +29,5 @@ public:
 
 	void OnMove(const FInputActionValue& Value);
 	virtual void SetupInputComponent() override;
-	
-	uint32 bMoveToMouseCursor : 1;
+	virtual void BeginPlay() override;
 };

@@ -263,6 +263,10 @@
     <None Include="..\..\Config\DefaultGameplayTags.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
     <None Include="..\..\Config\HoloLens\HoloLensEngine.ini"/>
+    <ClCompile Include="..\..\Source\MultiplayerTemplate\DeadBody.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MultiplayerTemplate\DeadBody.h"/>
     <ClCompile Include="..\..\Source\MultiplayerTemplate\MinimapSubsystem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
