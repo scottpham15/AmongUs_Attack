@@ -4,12 +4,15 @@
 #include "MyCharacter.h"
 
 #include "AbilitySystemComponent.h"
-#include "InputMappingQuery.h"
 #include "MyAttributeSet.h"
+#include "MyPlayerController.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/GameStateBase.h"
+#include "GameFramework/PlayerState.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Net/UnrealNetwork.h"
 
@@ -79,7 +82,6 @@ void AMyCharacter::BeginPlay()
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 // Called to bind functionality to input
@@ -97,15 +99,39 @@ void AMyCharacter::SetupACS()
 
 void AMyCharacter::DeadBodyReported(ADeadBody* DeadBodyDes)
 {
-	UKismetSystemLibrary::PrintString(this, "co 1 xac chet");
 	FoundDeadBody.Broadcast(DeadBodyDes);
 }
 
 void AMyCharacter::OnRep_IsDead()
 {
-	if (!IsValid(GetController()))
-		SetActorHiddenInGame(true);
+	if (!IsValid(GetController())) // ai day khac bien thanh ma
+	{
+		APlayerController* LocalController = UGameplayStatics::GetPlayerControllerFromID(GetWorld(), 0);
+		const bool IsLocalControllerValid = IsValid(LocalController);
+		bool IsLocalGhost = false;
+		if (IsLocalControllerValid && IsValid(LocalController->GetPawn()))
+			IsLocalGhost = Cast<AMyCharacter>(LocalController->GetPawn())->IsGhost;
+		if (IsLocalControllerValid && IsLocalGhost)
+		{
+			UKismetSystemLibrary::PrintString(this, this->GetName());
+			SetActorHiddenInGame(false); // se hien hinh
+		}
+		else
+		{
+			UKismetSystemLibrary::PrintString(this, this->GetName());
+			SetActorHiddenInGame(true); // se bi tang hinh
+		}
+	}
+	else // neu day la luc minh bi bien thanh ma
+	{
+		for (auto Temp: GetWorld()->GetGameState()->PlayerArray)
+		{
+			AMyCharacter* Ghost = Cast<AMyCharacter>(Temp->GetPawn());
+			Ghost->SetActorHiddenInGame(false); // tat ca ma khac hien hinh
+		}
+	}
 	
+	GetMesh()->SetMaterial(0, DeadMat);
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 	FTransform Temp = GetActorTransform();
 	Temp.SetLocation(DeadLoc);
@@ -114,9 +140,10 @@ void AMyCharacter::OnRep_IsDead()
 
 void AMyCharacter::ServerOnDead_Implementation(const FVector Loc)
 {
-	DeadLoc = Loc;
 	IsGhost = true;
-	UKismetSystemLibrary::PrintString(this, DeadLoc.ToString());
+	DeadLoc = Loc;
+	GetMesh()->SetMaterial(0, DeadMat);
+	
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 }
 
@@ -125,12 +152,12 @@ void AMyCharacter::OnHealthChange(const FOnAttributeChangeData& Data)
 	FVector LocSend = GetActorLocation();
 	LocSend.Z = 550.f;
 	ServerOnDead(LocSend);
-	GetMesh()->SetMaterial(0, DeadMat);
 }
 
 void AMyCharacter::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(AMyCharacter, DeadLoc);
+	DOREPLIFETIME(AMyCharacter, IsGhost);
 }
 
