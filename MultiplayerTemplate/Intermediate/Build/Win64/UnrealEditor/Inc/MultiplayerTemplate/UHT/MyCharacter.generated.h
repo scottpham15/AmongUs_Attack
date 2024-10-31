@@ -19,14 +19,18 @@ class ADeadBody;
 MULTIPLAYERTEMPLATE_API void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyComponent, ADeadBody* DeadBodyDes);
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_16_DELEGATE \
+MULTIPLAYERTEMPLATE_API void FAwayFromDeadBody_DelegateWrapper(const FMulticastScriptDelegate& AwayFromDeadBody);
+
+
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void ServerOnDead_Implementation(FVector Loc); \
 	DECLARE_FUNCTION(execServerOnDead); \
 	DECLARE_FUNCTION(execOnRep_IsDead);
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_CALLBACK_WRAPPERS
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_CALLBACK_WRAPPERS
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyCharacter(); \
 	friend struct Z_Construct_UClass_AMyCharacter_Statics; \
@@ -43,7 +47,7 @@ public: \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyCharacter(AMyCharacter&&); \
@@ -55,14 +59,14 @@ public: \
 	NO_API virtual ~AMyCharacter();
 
 
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_17_PROLOG
-#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_GENERATED_BODY \
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_18_PROLOG
+#define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_CALLBACK_WRAPPERS \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_INCLASS_NO_PURE_DECLS \
-	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_20_ENHANCED_CONSTRUCTORS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_CALLBACK_WRAPPERS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_INCLASS_NO_PURE_DECLS \
+	FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

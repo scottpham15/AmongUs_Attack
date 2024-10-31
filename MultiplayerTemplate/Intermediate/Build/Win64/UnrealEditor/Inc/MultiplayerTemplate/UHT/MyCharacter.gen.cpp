@@ -23,6 +23,7 @@ MULTIPLAYERTEMPLATE_API UClass* Z_Construct_UClass_ADeadBody_NoRegister();
 MULTIPLAYERTEMPLATE_API UClass* Z_Construct_UClass_AMyCharacter();
 MULTIPLAYERTEMPLATE_API UClass* Z_Construct_UClass_AMyCharacter_NoRegister();
 MULTIPLAYERTEMPLATE_API UClass* Z_Construct_UClass_UMyAttributeSet_NoRegister();
+MULTIPLAYERTEMPLATE_API UFunction* Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature();
 MULTIPLAYERTEMPLATE_API UFunction* Z_Construct_UDelegateFunction_MultiplayerTemplate_DestroyComponent__DelegateSignature();
 UPackage* Z_Construct_UPackage__Script_MultiplayerTemplate();
 // End Cross Module References
@@ -70,6 +71,32 @@ void FDestroyComponent_DelegateWrapper(const FMulticastScriptDelegate& DestroyCo
 	DestroyComponent.ProcessMulticastDelegate<UObject>(&Parms);
 }
 // End Delegate FDestroyComponent
+
+// Begin Delegate FAwayFromDeadBody
+struct Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_MultiplayerTemplate, nullptr, "AwayFromDeadBody__DelegateSignature", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FAwayFromDeadBody_DelegateWrapper(const FMulticastScriptDelegate& AwayFromDeadBody)
+{
+	AwayFromDeadBody.ProcessMulticastDelegate<UObject>(NULL);
+}
+// End Delegate FAwayFromDeadBody
 
 // Begin Class AMyCharacter Function OnRep_IsDead
 struct Z_Construct_UFunction_AMyCharacter_OnRep_IsDead_Statics
@@ -229,6 +256,9 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FoundDeadBody_MetaData[] = {
 		{ "ModuleRelativePath", "MyCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AwayFromDeadBody_MetaData[] = {
+		{ "ModuleRelativePath", "MyCharacter.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TopDownCameraComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraBoom;
@@ -240,6 +270,7 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DeadMat;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_DeadLoc;
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_FoundDeadBody;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_AwayFromDeadBody;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -266,6 +297,7 @@ const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyCharacter_St
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadMat = { "DeadMat", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, DeadMat), Z_Construct_UClass_UMaterial_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadMat_MetaData), NewProp_DeadMat_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadLoc = { "DeadLoc", "OnRep_IsDead", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, DeadLoc), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadLoc_MetaData), NewProp_DeadLoc_MetaData) };
 const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_FoundDeadBody = { "FoundDeadBody", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, FoundDeadBody), Z_Construct_UDelegateFunction_MultiplayerTemplate_DestroyComponent__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FoundDeadBody_MetaData), NewProp_FoundDeadBody_MetaData) }; // 3713632222
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_AwayFromDeadBody = { "AwayFromDeadBody", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, AwayFromDeadBody), Z_Construct_UDelegateFunction_MultiplayerTemplate_AwayFromDeadBody__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AwayFromDeadBody_MetaData), NewProp_AwayFromDeadBody_MetaData) }; // 2126925584
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_TopDownCameraComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_CameraBoom,
@@ -276,6 +308,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharac
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadMat,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadLoc,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_FoundDeadBody,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AwayFromDeadBody,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMyCharacter_Statics::DependentSingletons[])() = {
@@ -330,10 +363,10 @@ AMyCharacter::~AMyCharacter() {}
 struct Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 686328359U) },
+		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 2478310840U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_1216875289(TEXT("/Script/MultiplayerTemplate"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_2435261570(TEXT("/Script/MultiplayerTemplate"),
 	Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

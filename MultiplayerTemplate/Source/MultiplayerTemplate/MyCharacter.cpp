@@ -102,6 +102,11 @@ void AMyCharacter::DeadBodyReported(ADeadBody* DeadBodyDes)
 	FoundDeadBody.Broadcast(DeadBodyDes);
 }
 
+void AMyCharacter::AwayFromTheDeadBody()
+{
+	AwayFromDeadBody.Broadcast();
+}
+
 void AMyCharacter::OnRep_IsDead()
 {
 	if (!IsValid(GetController())) // ai day khac bien thanh ma
@@ -113,12 +118,10 @@ void AMyCharacter::OnRep_IsDead()
 			IsLocalGhost = Cast<AMyCharacter>(LocalController->GetPawn())->IsGhost;
 		if (IsLocalControllerValid && IsLocalGhost)
 		{
-			UKismetSystemLibrary::PrintString(this, this->GetName());
 			SetActorHiddenInGame(false); // se hien hinh
 		}
 		else
 		{
-			UKismetSystemLibrary::PrintString(this, this->GetName());
 			SetActorHiddenInGame(true); // se bi tang hinh
 		}
 	}
@@ -135,7 +138,11 @@ void AMyCharacter::OnRep_IsDead()
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 	FTransform Temp = GetActorTransform();
 	Temp.SetLocation(DeadLoc);
-	GetWorld()->SpawnActor<AActor>(DeadBody, Temp);
+	if (!HasSpawnDeadBody)
+	{
+		HasSpawnDeadBody = true;
+		GetWorld()->SpawnActor<AActor>(DeadBody, Temp);
+	}
 }
 
 void AMyCharacter::ServerOnDead_Implementation(const FVector Loc)
@@ -160,4 +167,3 @@ void AMyCharacter::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& O
 	DOREPLIFETIME(AMyCharacter, DeadLoc);
 	DOREPLIFETIME(AMyCharacter, IsGhost);
 }
-

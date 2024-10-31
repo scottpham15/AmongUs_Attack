@@ -29,11 +29,21 @@ void ADeadBody::OnOverlapBegin(class UPrimitiveComponent* newComp, class AActor*
 	}
 }
 
+void ADeadBody::OnOverlapEnd(class UPrimitiveComponent* newComp, class AActor* OtherActor,
+	class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (IsValid(Cast<AMyCharacter>(OtherActor)))
+	{
+		Cast<AMyCharacter>(OtherActor)->AwayFromTheDeadBody();
+	}
+}
+
 // Called when the game starts or when spawned
 void ADeadBody::BeginPlay()
 {
 	Super::BeginPlay();
 	Sphere->OnComponentBeginOverlap.AddDynamic(this, &ADeadBody::OnOverlapBegin);
+	Sphere->OnComponentEndOverlap.AddDynamic(this, &ADeadBody::OnOverlapEnd);
 }
 
 // Called every frame

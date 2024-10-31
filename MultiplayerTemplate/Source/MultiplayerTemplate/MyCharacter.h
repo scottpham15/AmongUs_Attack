@@ -13,6 +13,7 @@ class UMyAttributeSet;
 class UAbilitySystemComponent;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDestroyComponent, ADeadBody*, DeadBodyDes);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FAwayFromDeadBody);
 
 UCLASS(Blueprintable, config=Game)
 class MULTIPLAYERTEMPLATE_API AMyCharacter : public ACharacter, public IAbilitySystemInterface
@@ -65,6 +66,7 @@ public:
 	void SetupACS();
 
 	void DeadBodyReported(ADeadBody* DeadBodyDes);
+	void AwayFromTheDeadBody();
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	TSubclassOf<AActor> DeadBody;
@@ -80,9 +82,14 @@ public:
 	
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_IsDead)
 	FVector DeadLoc;
+
+	bool HasSpawnDeadBody = false;
 	
 	UPROPERTY(BlueprintAssignable)
 	FDestroyComponent FoundDeadBody;
+	
+	UPROPERTY(BlueprintAssignable)
+	FAwayFromDeadBody AwayFromDeadBody;
 protected:
 
 	void OnHealthChange(const FOnAttributeChangeData& Data);
