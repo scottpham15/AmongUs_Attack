@@ -145,12 +145,41 @@ void AMyCharacter::OnRep_IsDead()
 	}
 }
 
+void AMyCharacter::OnRep_KillByVote()
+{
+	if (!IsValid(GetController())) // ai day khac bien thanh ma
+	{
+		APlayerController* LocalController = UGameplayStatics::GetPlayerControllerFromID(GetWorld(), 0);
+		const bool IsLocalControllerValid = IsValid(LocalController);
+		bool IsLocalGhost = false;
+		if (IsLocalControllerValid && IsValid(LocalController->GetPawn()))
+			IsLocalGhost = Cast<AMyCharacter>(LocalController->GetPawn())->IsGhost;
+		if (IsLocalControllerValid && IsLocalGhost)
+		{
+			SetActorHiddenInGame(false); // se hien hinh
+		}
+		else
+		{
+			SetActorHiddenInGame(true); // se bi tang hinh
+		}
+	}
+	else // neu day la luc minh bi bien thanh ma
+	{
+		for (auto Temp: GetWorld()->GetGameState()->PlayerArray)
+		{
+			AMyCharacter* Ghost = Cast<AMyCharacter>(Temp->GetPawn());
+			Ghost->SetActorHiddenInGame(false); // tat ca ma khac hien hinh
+		}
+	}
+	GetMesh()->SetMaterial(0, DeadMat);
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
+}
+
 void AMyCharacter::ServerOnDead_Implementation(const FVector Loc)
 {
 	IsGhost = true;
 	DeadLoc = Loc;
 	GetMesh()->SetMaterial(0, DeadMat);
-	
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("Ghost"));
 }
 
@@ -166,4 +195,5 @@ void AMyCharacter::GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& O
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(AMyCharacter, DeadLoc);
 	DOREPLIFETIME(AMyCharacter, IsGhost);
+	DOREPLIFETIME(AMyCharacter, IsGhostByVote);
 }

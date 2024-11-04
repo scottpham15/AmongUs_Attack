@@ -26,6 +26,7 @@ MULTIPLAYERTEMPLATE_API void FAwayFromDeadBody_DelegateWrapper(const FMulticastS
 #define FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void ServerOnDead_Implementation(FVector Loc); \
 	DECLARE_FUNCTION(execServerOnDead); \
+	DECLARE_FUNCTION(execOnRep_KillByVote); \
 	DECLARE_FUNCTION(execOnRep_IsDead);
 
 
@@ -42,6 +43,7 @@ public: \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
 		IsGhost=NETFIELD_REP_START, \
+		IsGhostByVote, \
 		DeadLoc, \
 		NETFIELD_REP_END=DeadLoc	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;

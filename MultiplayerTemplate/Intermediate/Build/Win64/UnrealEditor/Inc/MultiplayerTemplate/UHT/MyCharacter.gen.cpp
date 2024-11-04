@@ -127,6 +127,35 @@ DEFINE_FUNCTION(AMyCharacter::execOnRep_IsDead)
 }
 // End Class AMyCharacter Function OnRep_IsDead
 
+// Begin Class AMyCharacter Function OnRep_KillByVote
+struct Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyCharacter, nullptr, "OnRep_KillByVote", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMyCharacter::execOnRep_KillByVote)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnRep_KillByVote();
+	P_NATIVE_END;
+}
+// End Class AMyCharacter Function OnRep_KillByVote
+
 // Begin Class AMyCharacter Function ServerOnDead
 struct MyCharacter_eventServerOnDead_Parms
 {
@@ -182,6 +211,7 @@ void AMyCharacter::StaticRegisterNativesAMyCharacter()
 	UClass* Class = AMyCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnRep_IsDead", &AMyCharacter::execOnRep_IsDead },
+		{ "OnRep_KillByVote", &AMyCharacter::execOnRep_KillByVote },
 		{ "ServerOnDead", &AMyCharacter::execServerOnDead },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -241,6 +271,10 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 		{ "Category", "MyCharacter" },
 		{ "ModuleRelativePath", "MyCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsGhostByVote_MetaData[] = {
+		{ "Category", "MyCharacter" },
+		{ "ModuleRelativePath", "MyCharacter.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DeadBody_MetaData[] = {
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "MyCharacter.h" },
@@ -266,6 +300,8 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BasicAttributeSet;
 	static void NewProp_IsGhost_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGhost;
+	static void NewProp_IsGhostByVote_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsGhostByVote;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DeadBody;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DeadMat;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_DeadLoc;
@@ -275,6 +311,7 @@ struct Z_Construct_UClass_AMyCharacter_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyCharacter_OnRep_IsDead, "OnRep_IsDead" }, // 3492965434
+		{ &Z_Construct_UFunction_AMyCharacter_OnRep_KillByVote, "OnRep_KillByVote" }, // 2082178497
 		{ &Z_Construct_UFunction_AMyCharacter_ServerOnDead, "ServerOnDead" }, // 3366398216
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -292,7 +329,12 @@ void Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhost_SetBit(void* Obj)
 {
 	((AMyCharacter*)Obj)->IsGhost = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000034, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyCharacter), &Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhost = { "IsGhost", nullptr, (EPropertyFlags)0x0010000000000024, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyCharacter), &Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhost_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhost_MetaData), NewProp_IsGhost_MetaData) };
+void Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhostByVote_SetBit(void* Obj)
+{
+	((AMyCharacter*)Obj)->IsGhostByVote = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhostByVote = { "IsGhostByVote", "OnRep_KillByVote", (EPropertyFlags)0x0010000100000024, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMyCharacter), &Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhostByVote_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsGhostByVote_MetaData), NewProp_IsGhostByVote_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadBody = { "DeadBody", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, DeadBody), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadBody_MetaData), NewProp_DeadBody_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadMat = { "DeadMat", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, DeadMat), Z_Construct_UClass_UMaterial_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadMat_MetaData), NewProp_DeadMat_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadLoc = { "DeadLoc", "OnRep_IsDead", (EPropertyFlags)0x0010000100000034, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, DeadLoc), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DeadLoc_MetaData), NewProp_DeadLoc_MetaData) };
@@ -304,6 +346,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharac
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_AbilitySystemComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_BasicAttributeSet,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhost,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_IsGhostByVote,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadBody,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadMat,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_DeadLoc,
@@ -349,9 +392,11 @@ template<> MULTIPLAYERTEMPLATE_API UClass* StaticClass<AMyCharacter>()
 void AMyCharacter::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 {
 	static const FName Name_IsGhost(TEXT("IsGhost"));
+	static const FName Name_IsGhostByVote(TEXT("IsGhostByVote"));
 	static const FName Name_DeadLoc(TEXT("DeadLoc"));
 	const bool bIsValid = true
 		&& Name_IsGhost == ClassReps[(int32)ENetFields_Private::IsGhost].Property->GetFName()
+		&& Name_IsGhostByVote == ClassReps[(int32)ENetFields_Private::IsGhostByVote].Property->GetFName()
 		&& Name_DeadLoc == ClassReps[(int32)ENetFields_Private::DeadLoc].Property->GetFName();
 	checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in AMyCharacter"));
 }
@@ -363,10 +408,10 @@ AMyCharacter::~AMyCharacter() {}
 struct Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 2478310840U) },
+		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 2809263884U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_2435261570(TEXT("/Script/MultiplayerTemplate"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_897331711(TEXT("/Script/MultiplayerTemplate"),
 	Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MultiplayerTemplate_Source_MultiplayerTemplate_MyCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

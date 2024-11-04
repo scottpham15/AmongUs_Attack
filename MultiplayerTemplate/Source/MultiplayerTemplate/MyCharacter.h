@@ -54,8 +54,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowPrivateAccess = "true"))
 	UMyAttributeSet* BasicAttributeSet;
 
-	UPROPERTY(BlueprintReadOnly, Replicated)
+	UPROPERTY(BlueprintReadWrite, Replicated)
 	bool IsGhost;
+
+	UPROPERTY(BlueprintReadWrite, ReplicatedUsing = OnRep_KillByVote)
+	bool IsGhostByVote;
 	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -77,6 +80,9 @@ public:
 	UFUNCTION()
 	void OnRep_IsDead();
 
+	UFUNCTION()
+	void OnRep_KillByVote();
+
 	UFUNCTION(Server, Unreliable)
 	void ServerOnDead(FVector Loc);
 	
@@ -91,7 +97,6 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FAwayFromDeadBody AwayFromDeadBody;
 protected:
-
 	void OnHealthChange(const FOnAttributeChangeData& Data);
 	virtual void GetLifetimeReplicatedProps(TArray<class FLifetimeProperty>& OutLifetimeProps) const override;
 };
