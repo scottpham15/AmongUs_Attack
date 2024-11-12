@@ -13,6 +13,7 @@
     </None>
     <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\MultiplayerTemplate.sln.DotSettings.user" />
     <None Include="..\..\MultiplayerTemplate.uproject.DotSettings.user" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
@@ -76,6 +77,12 @@
       <Filter>Source\MultiplayerTemplate</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\MultiplayerTemplate\MyCharacter.h">
+      <Filter>Source\MultiplayerTemplate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MultiplayerTemplate\MyGameMode.cpp">
+      <Filter>Source\MultiplayerTemplate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MultiplayerTemplate\MyGameMode.h">
       <Filter>Source\MultiplayerTemplate</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\MultiplayerTemplate\MyPlayerController.cpp">

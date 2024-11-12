@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\GitHub\\AmongUs_Attack\\AmongUs_Attack\\MultiplayerTemplate\\Source\\MultiplayerTemplate\\MultiplayerTemplate.Build.cs",
-		"D:\\GitHub\\AmongUs_Attack\\AmongUs_Attack\\MultiplayerTemplate\\Source\\MultiplayerTemplate.Target.cs",
-		"D:\\GitHub\\AmongUs_Attack\\AmongUs_Attack\\MultiplayerTemplate\\Source\\MultiplayerTemplateEditor.Target.cs"
+		"D:\\GitHub\\Among Us Clone\\AmongUs_Attack\\MultiplayerTemplate\\Source\\MultiplayerTemplate\\MultiplayerTemplate.Build.cs",
+		"D:\\GitHub\\Among Us Clone\\AmongUs_Attack\\MultiplayerTemplate\\Source\\MultiplayerTemplate.Target.cs",
+		"D:\\GitHub\\Among Us Clone\\AmongUs_Attack\\MultiplayerTemplate\\Source\\MultiplayerTemplateEditor.Target.cs"
 	],
 	"EngineVersion": "5.4.4"
 }

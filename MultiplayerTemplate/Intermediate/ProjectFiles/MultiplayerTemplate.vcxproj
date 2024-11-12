@@ -254,6 +254,7 @@
     <None Include="..\..\Source\MultiplayerTemplateEditor.Target.cs"/>
     <None Include="..\..\.gitignore"/>
     <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\MultiplayerTemplate.sln.DotSettings.user"/>
     <None Include="..\..\MultiplayerTemplate.uproject.DotSettings.user"/>
     <None Include="..\..\README.md"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
@@ -284,6 +285,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\MultiplayerTemplate\MyCharacter.h"/>
+    <ClCompile Include="..\..\Source\MultiplayerTemplate\MyGameMode.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MultiplayerTemplate\MyGameMode.h"/>
     <ClCompile Include="..\..\Source\MultiplayerTemplate\MyPlayerController.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

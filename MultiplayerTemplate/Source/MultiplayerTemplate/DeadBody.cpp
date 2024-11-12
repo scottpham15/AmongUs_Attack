@@ -15,7 +15,8 @@ ADeadBody::ADeadBody()
 	SetRootComponent(Sphere);
 	Sphere->SetSphereRadius(500.0);
 	Sphere->SetHiddenInGame(false);
-	
+	FVector x = GetActorLocation();
+	x.Normalize();
 	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMesh"));
 	SkeletalMesh->SetupAttachment(RootComponent);
 }
