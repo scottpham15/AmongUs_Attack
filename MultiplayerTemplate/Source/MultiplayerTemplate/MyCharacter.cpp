@@ -147,7 +147,7 @@ void AMyCharacter::OnRep_IsDead()
 
 void AMyCharacter::OnRep_KillByVote()
 {
-	if (!IsValid(GetController())) // ai day khac bien thanh ma
+	if (!IsValid(GetController())) // other player is killed and become Ghost
 	{
 		APlayerController* LocalController = UGameplayStatics::GetPlayerControllerFromID(GetWorld(), 0);
 		const bool IsLocalControllerValid = IsValid(LocalController);
@@ -156,11 +156,11 @@ void AMyCharacter::OnRep_KillByVote()
 			IsLocalGhost = Cast<AMyCharacter>(LocalController->GetPawn())->IsGhost;
 		if (IsLocalControllerValid && IsLocalGhost)
 		{
-			SetActorHiddenInGame(false); // se hien hinh
+			SetActorHiddenInGame(false); // visible
 		}
 		else
 		{
-			SetActorHiddenInGame(true); // se bi tang hinh
+			SetActorHiddenInGame(true); // invisible
 		}
 	}
 	else // neu day la luc minh bi bien thanh ma
@@ -168,7 +168,7 @@ void AMyCharacter::OnRep_KillByVote()
 		for (auto Temp: GetWorld()->GetGameState()->PlayerArray)
 		{
 			AMyCharacter* Ghost = Cast<AMyCharacter>(Temp->GetPawn());
-			Ghost->SetActorHiddenInGame(false); // tat ca ma khac hien hinh
+			Ghost->SetActorHiddenInGame(false); // all ghost are visible
 		}
 	}
 	GetMesh()->SetMaterial(0, DeadMat);

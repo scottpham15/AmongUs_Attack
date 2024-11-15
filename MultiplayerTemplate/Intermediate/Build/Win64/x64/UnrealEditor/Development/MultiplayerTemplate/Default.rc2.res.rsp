@@ -81,5 +81,5 @@
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_NAME="Third Person BP Game Template"
 /DPROJECT_PRODUCT_IDENTIFIER=MultiplayerTemplate
-/fo "D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\Default.rc2.res"
+/fo "D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"

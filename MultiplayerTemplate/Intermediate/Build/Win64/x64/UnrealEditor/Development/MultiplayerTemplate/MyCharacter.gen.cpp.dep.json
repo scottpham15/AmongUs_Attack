@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.gen.cpp",
+        "Source": "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
-            "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\mycharacter.h",
+            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
+            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\mycharacter.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
@@ -69,13 +69,13 @@
             "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysystemcomponent.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\abilitysysteminterface.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\abilitysysteminterface.generated.h",
-            "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\deadbody.h",
+            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\deadbody.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
             "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
-            "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\deadbody.generated.h",
-            "d:\\github\\among us clone\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.generated.h"
+            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\deadbody.generated.h",
+            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\mycharacter.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

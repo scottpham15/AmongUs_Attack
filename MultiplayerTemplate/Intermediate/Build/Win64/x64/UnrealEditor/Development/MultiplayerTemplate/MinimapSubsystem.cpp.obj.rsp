@@ -1,11 +1,11 @@
-"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Source\MultiplayerTemplate\MinimapSubsystem.cpp"
-/FI"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
-/FI"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\Definitions.MultiplayerTemplate.h"
-/Yu"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
-/Fp"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
-/Fo"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MinimapSubsystem.cpp.obj"
-/sourceDependencies "D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MinimapSubsystem.cpp.dep.json"
-@"D:\GitHub\Among Us Clone\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MultiplayerTemplate.Shared.rsp"
+"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Source\MultiplayerTemplate\MinimapSubsystem.cpp"
+/FI"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/FI"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\Definitions.MultiplayerTemplate.h"
+/Yu"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
+/Fp"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\MultiplayerTemplateEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
+/Fo"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MinimapSubsystem.cpp.obj"
+/sourceDependencies "D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MinimapSubsystem.cpp.dep.json"
+@"D:\GitHub\AmongUs_Attack\AmongUs_Attack\MultiplayerTemplate\Intermediate\Build\Win64\x64\UnrealEditor\Development\MultiplayerTemplate\MultiplayerTemplate.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
