@@ -13,6 +13,7 @@ class UEnhancedInputLocalPlayerSubsystem;
 AMyPlayerController::AMyPlayerController(): DefaultMappingContext(nullptr), MoveAction(nullptr)
 {
 	bShowMouseCursor = true;
+	bReplicates = true;
 }
 
 void AMyPlayerController::AcknowledgePossession(class APawn* P)
