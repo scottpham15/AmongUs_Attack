@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\minimapsubsystem.gen.cpp",
+        "Source": "d:\\github\\among us clone\\amongus_attack\\amongus_clone_21_11\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\minimapsubsystem.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "PCH": "d:\\github\\among us clone\\amongus_attack\\amongus_clone_21_11\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\multiplayertemplateeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
         "Includes": [
-            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
-            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\minimapsubsystem.h",
-            "d:\\github\\amongus_attack\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\minimapsubsystem.generated.h"
+            "d:\\github\\among us clone\\amongus_attack\\amongus_clone_21_11\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\multiplayertemplate\\definitions.multiplayertemplate.h",
+            "d:\\github\\among us clone\\amongus_attack\\amongus_clone_21_11\\amongus_attack\\multiplayertemplate\\source\\multiplayertemplate\\minimapsubsystem.h",
+            "d:\\github\\among us clone\\amongus_attack\\amongus_clone_21_11\\amongus_attack\\multiplayertemplate\\intermediate\\build\\win64\\unrealeditor\\inc\\multiplayertemplate\\uht\\minimapsubsystem.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
